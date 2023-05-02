@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import Form from "./Form";
+import Card from "./Card";
 
 const ClimaPanel = () => {
     let urlWeather = "https://api.openweathermap.org/data/2.5/weather?appid=80d72a59e30d72313cbb37d8afcb4d71&lang=es";
@@ -9,7 +10,7 @@ const ClimaPanel = () => {
 
     const [weather, setWeather] = useState([]);
     const [forecast , setForecast] = useState([]);
-    const [loadind, setLoading] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [show, setShow] = useState(false);
     const [location, setLocation] = useState("");
 
@@ -52,7 +53,13 @@ const ClimaPanel = () => {
     return(
         <React.Fragment>
             <Form
-            newLocation = {getLocation}
+                newLocation = {getLocation}
+            />
+            <Card
+                showData = {show}
+                loadingData = {loading}
+                weather = {weather}
+                forecast = {forecast}
             />
         </React.Fragment>
     );
