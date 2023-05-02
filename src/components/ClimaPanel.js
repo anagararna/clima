@@ -12,16 +12,16 @@ const ClimaPanel = () => {
     const [forecast , setForecast] = useState([]);
     const [loading, setLoading] = useState(false);
     const [show, setShow] = useState(false);
-    const [location, setLocation] = useState("");
+    // const [location, setLocation] = useState("");
 
     const getLocation = async(loc) => {
         setLoading(true);
-        setLocation(loc);
+        // setLocation(loc);
         //llamada Api
         urlWeather = urlWeather + cityUrl + loc ;
 
         await fetch(urlWeather).then((response) => {
-            if(!response.ok) throw {response}
+            if(!response.ok) throw new Error ('error en la peticion')
             return response.json();
         }).then((weatherData) =>{
             console.log(weatherData);
@@ -35,7 +35,7 @@ const ClimaPanel = () => {
         urlForecast = urlForecast + cityUrl + loc;
         
         await fetch(urlForecast).then((response) => {
-            if(!response.ok) throw {response}
+            if(!response.ok) throw new Error ('error en la peticion')
             return response.json();
         }).then((forecastData) =>{
             console.log(forecastData);
