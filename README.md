@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+![clima](https://user-images.githubusercontent.com/114427205/235657744-c5fb42b1-c637-4463-b7c5-ec842643bb88.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
